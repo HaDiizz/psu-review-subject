@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>หน้าแรก</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background: #5565d8">
+      <div class="container">
+        <a class="navbar-brand d-flex" href="#"
+          ><img src="./images/psu.png" alt="brand" width="50" height="25" />
+          <span class="text-white fs-5 text-uppercase fw-bold"
+            >Tips <i class="bi bi-rocket-fill text-warning"></i></span
+        ></a>
+        <button
+          class="navbar-toggler text-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list fs-3"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <span class="navbar-text">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li
+                class="nav-item d-flex justify-content-center align-items-center"
+              >
+                <div>
+                  <input type="checkbox" class="checkbox" id="checkbox" />
+                  <label for="checkbox" class="checkbox-label">
+                    <i class="bi bi-moon-stars-fill"></i>
+                    <i class="bi bi-sun-fill"></i>
+                    <span class="ball"></span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container pt-4">
+      <div class="content-header">
+        <span class="d-flex justify-content-center align-items-center gap-4"
+          ><h1 class="fw-bold">PSU Tips</h1>
+          <i class="bi bi-heart-fill fs-3 text-danger"></i
+        ></span>
+        <span
+          ><h4 class="text-center fw-bold">
+            ค้นหาแบ่งปันรีวิววิชาเลือกเสรี
+          </h4></span
+        >
+      </div>
+
+      <div class="content-search pt-5 d-flex justify-content-center">
+        <div class="input-group mb-3" style="max-width: 50%">
+          <input
+            type="text"
+            class="form-control bg-transparent"
+            placeholder="ค้นหารายวิชา"
+            aria-label="Search Subject"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-info"
+            type="button"
+            id="button-addon2"
+          >
+            <i class="bi bi-search-heart"></i>
+          </button>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="review-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#review-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="review-tab-pane"
+            aria-selected="true"
+          >
+            รีวิวล่าสุด
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="question-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#question-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="question-tab-pane"
+            aria-selected="false"
+          >
+            คำถาม
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="summary-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#summary-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="summary-tab-pane"
+            aria-selected="false"
+          >
+            สรุป
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active pt-5"
+          id="review-tab-pane"
+          role="tabpanel"
+          aria-labelledby="review-tab"
+          tabindex="0"
+        >
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">895-063 | FAT TO FIT</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">
+                <ul class="fw-semibold">
+                  <li>ค่าน้ำหนัก : 2 หน่วยกิต</li>
+                  <li>
+                    เวลาเรียน : มีหลาย Section ทั้ง จันทร์ อังคาร พุธ
+                    14:00-16:00 น.
+                  </li>
+                  <li>ผู้สอน : อาจารย์กรฎา มาตยากร</li>
+                </ul>
+              </h6>
+              <hr />
+              <p class="card-text">
+                เนื้อหา : FAT TO FIT ตามรายวิชาเลย อ้วนได้ก็ผอมได้
+                โดยวิชานี้จะเน้นทฤษฏี มีองค์ความรู้ รู้แล้วนำไปปรับใช้
+                นำไปปฏิบัติ ดูแลสุขภาพอย่างมีหลักการ รู้ระบบการทำงานของร่างกาย
+                โดยเรียนเกี่ยวกับ Mindset เรื่องสุขภาพปัญหาของโรคอ้วน
+                ดัชนีมวลกาย การรักษาน้ำหนัก การคำนวณแคลอรี่ SMART GOAL
+                สร้างแรงบันดาลใจในการลดน้ำหนัก โภชนาการเพื่อสุขภาพ แนวทาง
+                และโปรแกรมออกกำลังกาย ชอบวิชานี้มาก เน้นสร้างแนวคิด
+                ปลูกฝังทัศนคติที่ดี อาจารย์ใจดี น่ารักมาก ๆ อำลา ปฏิวัติ
+                ทุกคนจะได้ยินคำนี้ ฟังแล้วฮึกเหิมมาก ๆ You are what you eat
+                เป็นคลาสเรียนแห่งคนรักสุขภาพ วิชานี้พิเศษมาก ๆ คือ
+                ได้ตรวจวัดดัชนี มวล ไขมัน ค่าต่าง ๆ ในร่างกายเรา ฟรี
+                กับเครื่องตรวจของอาจารย์ มี Assignment ให้ทำแต่ละบท
+                ซึ่งมีความน่าสนใจมาก ได้ฝึกการหาค่าต่าง ๆ
+                ได้ออกแบบโปรแกรมอาหารการกิน ออกแบบโปรแกรม คะแนนเก็บ 70 คะแนน ทำ
+                Assignment ตามที่อาจารย์สั่ง คะแนนสอบปลายภาค 30 คะแนน
+                อันนี้สำคัญมาก คือ ส่งงานตรงเวลา ไม่ส่งช้า และส่งงานให้ครบ
+                ภาพรวม ถือว่าไม่ยาก เรียนสนุกมาก ๆ เพลิน ๆ ตัวนี้ได้ A มา
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="question-tab-pane"
+          role="tabpanel"
+          aria-labelledby="question-tab"
+          tabindex="0"
+        >
+          Question
+        </div>
+        <div
+          class="tab-pane fade"
+          id="summary-tab-pane"
+          role="tabpanel"
+          aria-labelledby="summary-tab"
+          tabindex="0"
+        >
+          SUmmary
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
