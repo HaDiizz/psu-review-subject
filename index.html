@@ -76,24 +76,21 @@
         >
       </div>
 
-      <div class="content-search pt-5 d-flex justify-content-center">
-        <div class="input-group mb-3" style="max-width: 50%">
-          <input
-            type="text"
-            class="form-control bg-transparent"
-            placeholder="ค้นหารายวิชา"
-            aria-label="Search Subject"
-            aria-describedby="button-addon2"
-          />
-          <button
-            class="btn btn-outline-info"
-            type="button"
-            id="button-addon2"
-          >
-            <i class="bi bi-search-heart"></i>
-          </button>
+      <form autocomplete="off">
+      <div class="content-search pt-5 d-flex justify-content-center autocomplete">
+          <div class="input-group mb-3" style="max-width: 50%">
+              <input id="input-search-subject" type="text" class="form-control bg-transparent" placeholder="ค้นหารายวิชา" list="subject-list" id="input-datalist"  aria-label="Search Subject"
+              aria-describedby="button-addon2">
+            <button
+              class="btn btn-outline-primary"
+              type="button"
+              id="button-addon2"
+            >
+              <i class="bi bi-search-heart"></i>
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
 
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -107,7 +104,7 @@
             aria-controls="review-tab-pane"
             aria-selected="true"
           >
-            รีวิวล่าสุด
+            รีวิว
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -124,33 +121,19 @@
             คำถาม
           </button>
         </li>
-        <li class="nav-item" role="presentation">
-          <button
-            class="nav-link"
-            id="summary-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#summary-tab-pane"
-            type="button"
-            role="tab"
-            aria-controls="summary-tab-pane"
-            aria-selected="false"
-          >
-            สรุป
-          </button>
-        </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div
-          class="tab-pane fade show active pt-5"
+          class="tab-pane fade show active pt-5 pb-5"
           id="review-tab-pane"
           role="tabpanel"
           aria-labelledby="review-tab"
           tabindex="0"
         >
-          <div class="card shadow-sm">
+          <div class="card shadow-sm mb-5">
             <div class="card-body">
               <h5 class="card-title fw-bold">895-063 | FAT TO FIT</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">
+              <h6 class="card-subtitle mb-2 text-body-secondary mt-3">
                 <ul class="fw-semibold">
                   <li>ค่าน้ำหนัก : 2 หน่วยกิต</li>
                   <li>
@@ -184,22 +167,64 @@
           </div>
         </div>
         <div
-          class="tab-pane fade"
+          class="tab-pane fade pt-5 pb-5"
           id="question-tab-pane"
           role="tabpanel"
           aria-labelledby="question-tab"
           tabindex="0"
         >
-          Question
-        </div>
-        <div
-          class="tab-pane fade"
-          id="summary-tab-pane"
-          role="tabpanel"
-          aria-labelledby="summary-tab"
-          tabindex="0"
-        >
-          SUmmary
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">895-063 | FAT TO FIT</h5>
+              <hr />
+              <div class="form-floating pb-2">
+                <textarea
+                  class="form-control bg-transparent"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                ></textarea>
+                <label for="floatingTextarea2">Comments</label>
+              </div>
+              <button class="btn btn-primary">ยืนยัน</button>
+            </div>
+          </div>
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">ถามโดย <span style="color: #d88aff;">Tanapat Rordpasa</span></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">
+                5 นาทีที่ผ่านมา
+              </h6>
+              <hr />
+              <p class="card-text" style="margin-left: 5px">
+                มีสอบปลายภาคไหมครับ
+              </p>
+              <div class="row">
+                <div class="col-md-4 border-end">
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <div><button class="fs-3 btn-vote-up">
+                      <i class="bi bi-arrow-up-short"></i>
+                    </button></div>
+                    <div class="text-vote-up">16</div>
+                  </div>
+                </div>
+                <div class="col-md-4 border-end">
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <div><button class="fs-3 btn-vote-down">
+                      <i class="bi bi-arrow-down-short"></i>
+                    </button></div>
+                    <div class="text-vote-down">2</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex justify-content-center align-items-center gap-2">
+                    <div><button class="fs-5 btn-comment">
+                      <i class="bi bi-chat-dots"></i>
+                    </button></div>
+                    <div class="text-comment">4</div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -210,5 +235,76 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+  <script>
+    function autocomplete(inp, arr) {
+      var currentFocus;
+      inp.addEventListener("input", function(e) {
+          var a, b, i, val = this.value;
+          closeAllLists();
+          if (!val) { return false;}
+          currentFocus = -1;
+          a = document.createElement("DIV");
+          a.setAttribute("id", this.id + "autocomplete-list");
+          a.setAttribute("class", "autocomplete-items");
+          this.parentNode.appendChild(a);
+          for (i = 0; i < arr.length; i++) {
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+              b = document.createElement("DIV");
+              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+              b.innerHTML += arr[i].substr(val.length);
+              b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+              b.addEventListener("click", function(e) {
+                  inp.value = this.getElementsByTagName("input")[0].value;
+                  closeAllLists();
+              });
+              a.appendChild(b);
+            }
+          }
+      });
+      inp.addEventListener("keydown", function(e) {
+          var x = document.getElementById(this.id + "autocomplete-list");
+          if (x) x = x.getElementsByTagName("div");
+          if (e.keyCode == 40) {
+            currentFocus++;
+            addActive(x);
+          } else if (e.keyCode == 38) { 
+            currentFocus--;
+            addActive(x);
+          } else if (e.keyCode == 13) {
+            e.preventDefault();
+            if (currentFocus > -1) {
+              if (x) x[currentFocus].click();
+            }
+          }
+      });
+      function addActive(x) {
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        x[currentFocus].classList.add("autocomplete-active");
+      }
+      function removeActive(x) {
+        for (var i = 0; i < x.length; i++) {
+          x[i].classList.remove("autocomplete-active");
+        }
+      }
+      function closeAllLists(elmnt) {
+        var x = document.getElementsByClassName("autocomplete-items");
+        for (var i = 0; i < x.length; i++) {
+          if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+          }
+        }
+      }
+      document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+      });
+    }
+    
+    var subjects = ["240-212 PROBABILITY AND STATISTICS", "895-063 FAT TO FIT", "240-402 COMPUTER ENGINEERING PROJECT II"];
+    
+    autocomplete(document.getElementById("input-search-subject"), subjects);
+    </script>
   </body>
 </html>

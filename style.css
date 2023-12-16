@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-weight: 600;
   min-height: 100vh;
   color: black;
@@ -37,8 +37,26 @@ body.dark h5,
 body.dark h6,
 body.dark li,
 body.dark p,
+body.dark hr,
 body.dark {
   color: #ffff;
+}
+
+body.dark .text-body-secondary {
+  color: #fff !important;
+}
+
+body.dark .autocomplete-items div {
+  background-color: #282841; 
+}
+
+body.dark .autocomplete-items div:hover {
+  background-color: #5565D8; 
+}
+
+body.dark input,
+body.dark textarea {
+  color: white !important;
 }
 
 body.dark .card {
@@ -49,17 +67,17 @@ body.dark .form-control::placeholder {
   color: rgb(255, 255, 255) !important;
 }
 
-textarea:focus, 
-textarea.form-control:focus, 
-input.form-control:focus, 
-input[type=text]:focus, 
-input[type=password]:focus, 
-input[type=email]:focus, 
-input[type=number]:focus, 
-[type=text].form-control:focus, 
-[type=password].form-control:focus, 
-[type=email].form-control:focus, 
-[type=tel].form-control:focus, 
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+[type="text"].form-control:focus,
+[type="password"].form-control:focus,
+[type="email"].form-control:focus,
+[type="tel"].form-control:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 -1px 0 #ddd;
 }
@@ -84,6 +102,68 @@ p {
 
 .bi.bi-heart-fill.fs-3.text-danger {
   animation: bounce 1s infinite ease-in-out;
+}
+
+.btn-vote-up,
+.btn-vote-down,
+.btn-comment {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: 40px;
+}
+
+.btn-vote-up, .text-vote-up {
+  color: #05de05;
+}
+.btn-vote-down, .text-vote-down {
+  color: #fc4242;
+}
+.btn-comment, .text-comment {
+  color: #05b6de;
+}
+
+.btn-vote-up:hover {
+  background: #05de053b;
+}
+.btn-vote-down:hover {
+  background: #fc424234;
+}
+.btn-comment:hover {
+  background: #05b6de34;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
 }
 
 /* ----  Dark/Light Switch  ---- */
